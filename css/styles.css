@@ -43,6 +43,24 @@ header div img{
 }
 
 .new-book-form{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+}
+
+form{
     border: 1px solid red;
-    width: 200px;
+}
+
+.new-book-form form div{
+    margin: 10px 0
+}
+
+.invisible{
+    display: none;
+}
+
+.cross{
+    border: 1px solid red;
+    height: 20px;
 }
