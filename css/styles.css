@@ -41,3 +41,8 @@ header div img{
     height: 4rem;
     width: auto;
 }
+
+.new-book-form{
+    border: 1px solid red;
+    width: 200px;
+}

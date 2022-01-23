@@ -14,11 +14,39 @@
     <header>
         <div>
             <img src="img/books.png" alt="library logo">
-            <span>Library</span> 
+            <span>Library</span>
         </div>
     </header>
 
-    <div class="container"></div>
+    <div class="new-book-form">
+        <form action="#">
+            <div class="">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="Name of the book">
+            </div>
+            <div class="">
+                <label for="author">Author</label>
+                <input type="text" name="author" id="author" placeholder="Author of the book">
+            </div>
+            <div class="">
+                <label for="pages">Pages</label>
+                <input type="text" name="pages" id="pages" placeholder="Pages" min="1">
+            </div>
+            <div class="">
+                Read Status
+            </div>
+            <div>
+                <label for="read">Read</label>
+                <input type="radio" name="readStatus" id="read" value="read">
+            </div>
+            <div class="">
+                <label for="not-read">Not Read</label>
+                <input type="radio" name="readStatus" id="not-read" value="notRead">
+            </div>
+            <button type="reset">Reset</button>
+            <button>Create New Book</button>
+        </form>
+    </div>
 </body>
 
 </html>
