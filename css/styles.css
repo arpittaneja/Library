@@ -42,25 +42,71 @@ header div img{
     width: auto;
 }
 
-.new-book-form{
-    /* border: 1px solid red; */
+.form-container{
+    border: 5px solid red;
     display: flex;
     justify-content: center;
+    align-items: center;
+    /* flex-flow: column nowrap; */
+    width: 300px;
+    /* max-width: 700px; */
+    /* display: none; */
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 form{
     border: 1px solid red;
+    width: 250px;
 }
 
 .new-book-form form div{
     margin: 10px 0
 }
 
+.reset{
+    border: 1px solid black;
+}
+
+.cross{
+    /* position: absolute; */
+    width: 20px;
+    border: 1px solid red;
+    height: 20px;
+    top: 0;
+    right: 280px;
+    align-self: flex-start;
+
+}
+
 .invisible{
     display: none;
 }
 
-.cross{
-    border: 1px solid red;
-    height: 20px;
+.book-cards{
+    display: flex;
+    flex-flow: row wrap;
+    border: 2px solid red;
+    gap: 20px 30px;
+}
+
+.card{
+    border: 2px solid black;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+}
+
+.book-read{
+    background-color: rgb(139, 218, 139);
+}
+
+.book-not-read{
+    background-color: rgb(253, 132, 121);
 }

@@ -18,44 +18,96 @@
         </div>
     </header>
 
-<div class="btn">
-    <button class="new-book">Enter A New Book</button>
-</div>
+    <div class="btn">
+        <button class="new-book">Enter A New Book</button>
+    </div>
 
-    <div class="new-book-form invisible">
+    <div class="form-container invisible">
         <form action="#">
             <div class="">
                 <label for="name">Name</label>
-                <input type="text" name="name" id="name" placeholder="Name of the book">
+                <input type="text" name="name" id="name" placeholder="Name of the book" required>
             </div>
 
             <div class="">
                 <label for="author">Author</label>
-                <input type="text" name="author" id="author" placeholder="Author of the book">
+                <input type="text" name="author" id="author" placeholder="Author of the book" required>
             </div>
 
             <div class="">
                 <label for="pages">Pages</label>
-                <input type="text" name="pages" id="pages" placeholder="Pages" min="1">
+                <input type="text" name="pages" id="pages" placeholder="Pages" min="1" required>
             </div>
 
             <div class="">
-                Read Status
+                Read Status:
             </div>
 
             <div>
                 <label for="read">Read</label>
-                <input type="radio" name="readStatus" id="read" value="read">
+                <input type="radio" name="readStatus" id="read" value="read" required>
             </div>
 
             <div class="">
                 <label for="not-read">Not Read</label>
                 <input type="radio" name="readStatus" id="not-read" value="notRead">
             </div>
-            <button>Create New Book</button>
-            <button type="reset" class="reset">Reset</button>
+            <button class="create">Create New Book</button>
         </form>
         <button class="cross">X</button>
+    </div>
+
+    <div class="book-cards">
+        <!-- <input type="checkbox"> -->
+
+        <!-- <div class="card">
+            Book <br>
+            Pages <br>
+            Author <br>
+            <button class="book-read">
+                delete
+            </button>
+        </div> -->
+        <!-- <div class="card">
+            Book <br>
+            Pages <br>
+            Author <br>
+            <button>
+                delete
+            </button>
+        </div>
+        <div class="card">
+            Book <br>
+            Pages <br>
+            Author <br>
+            <button>
+                delete
+            </button>
+        </div> -->
+        <!-- <div class="card">
+            Book <br>
+            Pages <br>
+            Author <br>
+            <button>
+                delete
+            </button>
+        </div>
+        <div class="card">
+            Book <br>
+            Pages <br>
+            Author <br>
+            <button>
+                delete
+            </button>
+        </div>
+        <div class="card">
+            Book <br>
+            Pages <br>
+            Author <br>
+            <button>
+                delete
+            </button> -->
+    </div>
     </div>
 </body>
 
