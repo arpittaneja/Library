@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 html {
@@ -8,15 +10,34 @@ html {
 }
 
 body {
+    height: 100%;
     border: 3px solid red;
     margin: 0px;
 }
 
-header {
+header{
     padding: 50px 0;
     border: 3px solid blue;
     display: flex;
     justify-content: center;
-    text-align: center;
 }
 
+header div{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 0 10px;
+    /* text-align: center; */
+}
+
+header div span{
+    /* border: 3px solid blue; */
+    font-size: 3rem;
+}
+
+header div img{
+    /* border: 3px solid blue; */
+    height: 4rem;
+    width: auto;
+}
