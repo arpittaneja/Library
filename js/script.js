@@ -1,9 +1,7 @@
 let newBookButton = document.querySelector(".new-book");
 newBookButton.addEventListener("click", displayBookForm);
-// console.log(newBookButton);
 
 let formContainer = document.querySelector(".form-container");
-// console.log(form);
 let crossButton = document.querySelector(".cross");
 
 let form = document.querySelector("form")
@@ -80,8 +78,9 @@ function updateLibrary() {
                 hasReadButton.classList.add("book-not-read");
             }
             newCard.appendChild(hasReadButton);
+            hasReadButton.setAttribute("data-number", `${count}`);
             newCard.appendChild(deleteButton);
-            deleteButton.id = `${count}`;
+            deleteButton.setAttribute("data-number", `${count}`);
             cards.appendChild(newCard);
             count++;
         }
@@ -89,11 +88,17 @@ function updateLibrary() {
 }
 
 function deleteThisCard(e) {
-    console.log(e.target.id);
-    myLibrary.splice(parseInt(e.target.id), 1);
+    console.log(e.target.getAttribute("data-number"));
+    myLibrary.splice(parseInt(e.target.getAttribute("data-number")), 1);
     updateLibrary();
 }
 
 function changeReadState(e) {
-    console.log(e);
+    console.log(e.target.getAttribute("data-number"));
+
+    myLibrary[e.target.getAttribute("data-number")].hasRead = !myLibrary[e.target.getAttribute("data-number")].hasRead
+
+    console.log(myLibrary[e.target.getAttribute("data-number")].hasRead);
+
+    updateLibrary();
 }
