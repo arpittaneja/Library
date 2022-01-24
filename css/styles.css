@@ -98,7 +98,7 @@ form{
     width: 150px;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     border-radius: 30px;
 }
