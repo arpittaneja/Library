@@ -18,48 +18,49 @@
         </div>
     </header>
 
-    <div class="btn">
-        <button class="new-book">Enter A New Book</button>
-    </div>
-
+    
     <div class="form-container invisible">
+        <p>Add Book</p> <hr>
+        
         <form action="#">
-            <div class="">
-                <label for="name">Name</label>
+            <div class="question-container">
+                <label for="name">Name</label> <br>
                 <input type="text" name="name" id="name" placeholder="Name of the book" required>
             </div>
-
-            <div class="">
-                <label for="author">Author</label>
+            
+            <div class="question-container">
+                <label for="author">Author</label> <br>
                 <input type="text" name="author" id="author" placeholder="Author of the book" required>
             </div>
-
-            <div class="">
-                <label for="pages">Pages</label>
+            
+            <div class="question-container"> 
+                <label for="pages">Pages</label> <br>
                 <input type="number" name="pages" id="pages" placeholder="Pages" min="1" required>
             </div>
-
-            <div class="">
-                Read Status:
-            </div>
-
-            <div>
-                <label for="read">Read</label>
-                <input type="radio" name="readStatus" id="read" value="read" required>
-            </div>
-
-            <div class="">
-                <label for="not-read">Not Read</label>
+            
+            <div class="question-container">
+                Have you read it? <br>
+                
+                <label for="read">Yes</label>
+                <input type="radio" name="readStatus" id="read" value="read" required> <br>
+                
+                <label for="not-read">No</label>
                 <input type="radio" name="readStatus" id="not-read" value="notRead">
             </div>
+            <div></div>
             <button class="create">Create New Book</button>
         </form>
-        <button class="cross">X</button>
+        <button class="cross">✕</button>
     </div>
-
+    
     <div class="book-cards">
     </div>
-    </div>
+</div>
+<div>
+    <button class="add-new-book"><span>+</span></button>
+</div>
+
+<div class="shadow invisible"></div>
 </body>
 
 </html>

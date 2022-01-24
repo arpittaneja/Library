@@ -1,13 +1,11 @@
-let newBookButton = document.querySelector(".new-book");
+let newBookButton = document.querySelector(".add-new-book");
 newBookButton.addEventListener("click", displayBookForm);
-
 let formContainer = document.querySelector(".form-container");
 let crossButton = document.querySelector(".cross");
-
-let form = document.querySelector("form")
+let form = document.querySelector("form");
 form.addEventListener("submit", addBookToLibrary);
-
 let myLibrary = [];
+let shadow = document.querySelector(".shadow");
 
 function Book(name, author, pages, hasRead) {
     this.name = name;
@@ -18,6 +16,7 @@ function Book(name, author, pages, hasRead) {
 
 function displayBookForm(e) {
     formContainer.classList.toggle("invisible");
+    shadow.classList.toggle("invisible");
     newBookButton.removeEventListener("click", displayBookForm);
     crossButton.addEventListener("click", closeBookForm);
 }
@@ -25,11 +24,11 @@ function displayBookForm(e) {
 function closeBookForm(e) {
     newBookButton.addEventListener("click", displayBookForm);
     formContainer.classList.toggle("invisible");
+    shadow.classList.toggle("invisible");
 }
 
 function addBookToLibrary(e) {
     e.preventDefault();
-
     let name = document.querySelector("#name").value;
     let author = document.querySelector("#author").value;
     let pages = document.querySelector("#pages").value;
@@ -60,20 +59,19 @@ function updateLibrary(myLibrary) {
 }
 
 function removeCard(e) {
-    console.log(e.target.getAttribute("data-number"));
-    myLibrary.splice(parseInt(e.target.getAttribute("data-number")), 1);
-    console.log(myLibrary.length);
+    console.log(e.target.dataset.number);
+    myLibrary.splice(parseInt(e.target.dataset.number), 1);
+    // console.log(myLibrary.length);
     updateLibrary(myLibrary);
 }
 
 function updateReadState(e) {
-    console.log(e.target.getAttribute("data-number"));
+    console.log(e.target.dataset.number);
 
-    myLibrary[e.target.getAttribute("data-number")].hasRead = !myLibrary[e.target.getAttribute("data-number")].hasRead
+    myLibrary[e.target.dataset.number].hasRead = !myLibrary[e.target.dataset.number].hasRead
 
-    console.log(myLibrary);
-    console.log(myLibrary[e.target.getAttribute("data-number")].hasRead);
-
+    // console.log(myLibrary);
+    // console.log(myLibrary[e.target.dataset.number].hasRead);
     updateLibrary(myLibrary);
 }
 
