@@ -5,7 +5,6 @@ let crossButton = document.querySelector(".cross");
 let form = document.querySelector("form");
 form.addEventListener("submit", addBookToLibrary);
 let shadow = document.querySelector(".shadow");
-
 let myLibrary = [];
 
 //book constructor
