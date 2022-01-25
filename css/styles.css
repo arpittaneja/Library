@@ -145,9 +145,9 @@ input#pages {
 
 .card {
     font-size: 1.3rem;
-    min-height: 254px;
-    max-height: 400px;
-    width: 200px;
+    min-height: 260px;
+    max-height: 404px;
+    width: 204px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-evenly;
