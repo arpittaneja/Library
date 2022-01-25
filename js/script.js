@@ -4,9 +4,11 @@ let formContainer = document.querySelector(".form-container");
 let crossButton = document.querySelector(".cross");
 let form = document.querySelector("form");
 form.addEventListener("submit", addBookToLibrary);
-let myLibrary = [];
 let shadow = document.querySelector(".shadow");
 
+let myLibrary = [];
+
+//book constructor
 function Book(name, author, pages, hasRead) {
     this.name = name;
     this.author = author;
@@ -14,18 +16,21 @@ function Book(name, author, pages, hasRead) {
     this.hasRead = hasRead;
 }
 
+//dsiplays form on screen
 function displayBookForm(e) {
     formContainer.classList.toggle("invisible");
     shadow.classList.toggle("invisible");
     crossButton.addEventListener("click", closeBookForm);
 }
 
+//hides form from screen
 function closeBookForm(e) {
     formContainer.classList.toggle("invisible");
     shadow.classList.toggle("invisible");
     crossButton.removeEventListener("click", closeBookForm);
 }
 
+//collects the form info and appends a Book instance to the library array
 function addBookToLibrary(e) {
     e.preventDefault();
     let name = document.querySelector("#name").value;
@@ -40,8 +45,8 @@ function addBookToLibrary(e) {
     form.reset();
 }
 
+//adds each element of library array to shelf
 function updateLibrary(myLibrary) {
-    // console.log(myLibrary);
     let shelf = document.querySelector(".shelf");
     let index = 0;
     shelf.textContent = "";
@@ -56,18 +61,18 @@ function updateLibrary(myLibrary) {
     }
 }
 
-function removeCard(e) {
+//removes the book object from the array
+function removeBook(e) {
     console.log(e.target.parentNode.dataset.number);
     myLibrary.splice(parseInt(e.target.parentNode.dataset.number), 1);
     updateLibrary(myLibrary);
 }
 
+//changes the read status of books
 function updateReadState(e) {
-    // console.log(myLibrary[e.target.parentNode.dataset.number].hasRead)
+    //inverts the boolean value for the read status
     myLibrary[e.target.parentNode.dataset.number].hasRead = !myLibrary[e.target.parentNode.dataset.number].hasRead
 
-    // console.log(myLibrary[e.target.parentNode.dataset.number].hasRead)
-    // updateLibrary(myLibrary);
     if (e.target.textContent === "Book Not Read") {
         e.target.textContent = "Book Read"
         e.target.parentNode.classList.remove("book-card-not-read");
@@ -80,10 +85,12 @@ function updateReadState(e) {
     }
 }
 
+//appends html elemenst the the new Book card
 function updateNewBookCard(newBookCard, book, index) {
+
     let p = document.createElement("p");
     p.textContent = `${book.name}`
-    p.style.fontSize = "2.5rem";
+    p.style.fontSize = "2.1rem";
     p.style.fontWeight = "bold";
     newBookCard.appendChild(p);
 
@@ -100,24 +107,20 @@ function updateNewBookCard(newBookCard, book, index) {
     hasReadButton.addEventListener("click", updateReadState);
 
     if (hasReadButton.textContent === "Book Read") {
-        // hasReadButton.classList.add("book-read");
         newBookCard.classList.add("book-card-read");
     }
     else {
-        // hasReadButton.classList.add("book-not-read");
         newBookCard.classList.add("book-card-not-read");
     }
+
     hasReadButton.classList.add("book-status");
 
     let removeButton = document.createElement("button");
     removeButton.classList.add("book-remove");
     removeButton.textContent = "Remove";
-
-    removeButton.addEventListener("click", removeCard)
+    removeButton.addEventListener("click", removeBook)
 
     newBookCard.setAttribute("data-number", `${index}`);
-    // removeButton.setAttribute("data-number", `${index}`);
-
     newBookCard.appendChild(hasReadButton);
     newBookCard.appendChild(removeButton);
     newBookCard.classList.add("card");
