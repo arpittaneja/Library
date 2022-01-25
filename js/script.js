@@ -69,20 +69,19 @@ function removeBook(e) {
 }
 
 //changes the read status of books
-function updateReadState(e) {
-    //inverts the boolean value for the read status
-    myLibrary[e.target.parentNode.dataset.number].hasRead = !myLibrary[e.target.parentNode.dataset.number].hasRead
-
-    if (e.target.textContent === "Book Not Read") {
-        e.target.textContent = "Book Read"
-        e.target.parentNode.classList.remove("book-card-not-read");
-        e.target.parentNode.classList.add("book-card-read");       
-    }
-    else {
+Book.prototype.updateReadState = function (e) {
+    this.hasRead = !this.hasRead;
+    if (this.hasRead === true) {
         e.target.textContent = "Book Not Read"
         e.target.parentNode.classList.remove("book-card-read");
-        e.target.parentNode.classList.add("book-card-not-read");    
+        e.target.parentNode.classList.add("book-card-not-read");
     }
+    else {
+        e.target.textContent = "Book Read"
+        e.target.parentNode.classList.remove("book-card-not-read");
+        e.target.parentNode.classList.add("book-card-read");
+    }
+    console.log("hi")
 }
 
 //appends html elemenst the the new Book card
@@ -104,7 +103,8 @@ function updateNewBookCard(newBookCard, book, index) {
 
     let hasReadButton = document.createElement("p");
     hasReadButton.textContent = book.hasRead === true ? "Book Read" : "Book Not Read";
-    hasReadButton.addEventListener("click", updateReadState);
+    console.log(book);
+    hasReadButton.addEventListener("click", book.updateReadState);
 
     if (hasReadButton.textContent === "Book Read") {
         newBookCard.classList.add("book-card-read");
