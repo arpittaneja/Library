@@ -34,17 +34,17 @@
         <form action="#">
             <div class="question-container">
                 <label for="name">Name</label><br>
-                <input type="text" name="name" id="name" placeholder="Name of the book" required>
+                <input type="text" name="name" id="name" placeholder="Name of the book" maxlength="30" required>
             </div>
 
             <div class="question-container">
                 <label for="author">Author</label> <br>
-                <input type="text" name="author" id="author" placeholder="Author of the book" required>
+                <input type="text" name="author" id="author" placeholder="Author of the book" maxlength="20" required>
             </div>
 
             <div class="question-container">
                 <label for="pages">Pages</label> <br>
-                <input type="number" name="pages" id="pages" placeholder="Pages" min="1" required>
+                <input type="number" name="pages" id="pages" placeholder="Pages" min="1" max="10000" required>
             </div>
 
             <div class="question-container">

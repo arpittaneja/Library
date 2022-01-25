@@ -63,7 +63,6 @@ function updateLibrary(myLibrary) {
 
 //removes the book object from the array
 function removeBook(e) {
-    console.log(e.target.parentNode.dataset.number);
     myLibrary.splice(parseInt(e.target.parentNode.dataset.number), 1);
     updateLibrary(myLibrary);
 }
@@ -81,7 +80,6 @@ Book.prototype.updateReadState = function (e) {
         e.target.parentNode.classList.remove("book-card-not-read");
         e.target.parentNode.classList.add("book-card-read");
     }
-    console.log("hi")
 }
 
 //appends html elemenst the the new Book card
@@ -103,7 +101,6 @@ function updateNewBookCard(newBookCard, book, index) {
 
     let hasReadButton = document.createElement("p");
     hasReadButton.textContent = book.hasRead === true ? "Book Read" : "Book Not Read";
-    console.log(book);
     hasReadButton.addEventListener("click", book.updateReadState);
 
     if (hasReadButton.textContent === "Book Read") {
