@@ -8,59 +8,66 @@
     <title>Library</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/script.js" defer></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Hind+Siliguri&family=Libre+Baskerville&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body>
+    <div class="shadow invisible"></div>
     <header>
         <div>
             <img src="img/books.png" alt="library logo">
-            <span>Library</span>
+            <span>My Library</span>
         </div>
     </header>
 
-    
     <div class="form-container invisible">
-        <p>Add Book</p> <hr>
-        
+        <p>Add Book</p>
+        <hr>
+
         <form action="#">
             <div class="question-container">
-                <label for="name">Name</label> <br>
+                <label for="name">Name</label><br>
                 <input type="text" name="name" id="name" placeholder="Name of the book" required>
             </div>
-            
+
             <div class="question-container">
                 <label for="author">Author</label> <br>
                 <input type="text" name="author" id="author" placeholder="Author of the book" required>
             </div>
-            
-            <div class="question-container"> 
+
+            <div class="question-container">
                 <label for="pages">Pages</label> <br>
                 <input type="number" name="pages" id="pages" placeholder="Pages" min="1" required>
             </div>
-            
+
             <div class="question-container">
                 Have you read it? <br>
-                
+
                 <label for="read">Yes</label>
                 <input type="radio" name="readStatus" id="read" value="read" required> <br>
-                
+
                 <label for="not-read">No</label>
                 <input type="radio" name="readStatus" id="not-read" value="notRead">
             </div>
-            <div></div>
-            <button class="create">Create New Book</button>
+
+            <button class="create">Add New Book</button>
         </form>
         <button class="cross">✕</button>
     </div>
-    
-    <div class="book-cards">
-    </div>
-</div>
-<div>
-    <button class="add-new-book"><span>+</span></button>
-</div>
 
-<div class="shadow invisible"></div>
+    <div class="shelf">
+        Click the + button to add books!
+    </div>
+
+    <button title= "Add a new book" class="add-new-book"><span class="plus">+</span></button>
+
 </body>
 
 </html>

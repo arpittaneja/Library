@@ -11,15 +11,31 @@ html {
 
 body {
     height: 100%;
-    border: 3px solid red;
+    /* border: 3px solid red; */
     margin: 0px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+    background-color: #E7FBBE;
+    font-family: 'Fjalla One', sans-serif;
 }
 
 header {
     padding: 50px 0;
-    border: 3px solid blue;
+    /* border: 3px solid blue; */
     display: flex;
     justify-content: center;
+    background-color: #FFFDDE;
+}
+
+.shadow {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgb(0, 0, 0);
+    opacity: 0.3;
+    z-index: 10;
+    top: 0px;
 }
 
 header div {
@@ -39,15 +55,19 @@ header div img {
 }
 
 .form-container {
-    border: 5px solid rgb(165, 197, 105);
-
+    /* border: 5px solid rgb(165, 197, 105); */
+    z-index: 20;
     width: 300px;
     position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     background-color: #fff;
-    transition: all 1s ease-in-out;
+    border-radius: 20px;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    /* transition: opacity 1s ease-in-out; */
 }
 
 .form-container p {
@@ -56,7 +76,7 @@ header div img {
 }
 
 .question-container {
-    margin: 20px;
+    margin: 15px 40px;
 }
 
 form {
@@ -64,12 +84,7 @@ form {
     justify-content: flex-start;
     align-items: flex-start;
     flex-flow: column wrap;
-    border: 1px solid red;
     width: 100%;
-}
-
-.reset {
-    border: 1px solid black;
 }
 
 .create {
@@ -77,6 +92,14 @@ form {
     margin-bottom: 20px;
     border-radius: 5px;
     border: none;
+    height: 30px;
+    width: 150px;
+    cursor: pointer;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.create:hover {
+    background-color: #bdbdbd;
 }
 
 .cross {
@@ -84,8 +107,8 @@ form {
     width: 20px;
     border: 1px solid red;
     height: 20px;
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 15px;
     align-self: flex-start;
     border: none;
     background-color: #fff;
@@ -93,73 +116,96 @@ form {
 }
 
 .cross:hover {
-    background-color: rgb(218, 218, 218);
+    font-weight: bold;
+    background-color: #bdbdbd;
 }
 
 .invisible {
     display: none;
 }
 
-.book-cards {
+.shelf {
     display: flex;
     flex-flow: row wrap;
-    border: 2px solid red;
+    /* border: 2px solid rgb(176, 184, 63); */
     gap: 30px 30px;
-    min-height: 150px;
+    min-height: 300px;
+    width: 85%;
+    align-self: center;
+    border-radius: 20px;
+    text-align: center;
+    background-color: #fcefe6;
 }
 
 .card {
+    font-size: 1.5rem;
     border: 2px solid black;
-    height: 150px;
-    width: 150px;
+    min-height: 250px;
+    max-height: 400px;
+    width: 200px;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    border-radius: 30px;
+    border-radius: 20px;
+    transition: background 0.45s ease-in-out;
+    /* gap: 20px; */
+    flex: 0 0 auto;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.card p {
+    text-align: center;
+}
+
+.book-status{
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.book-status:hover{
+    text-decoration: underline;
+    text-decoration-color: white;
 }
 
 .add-new-book {
     height: 5rem;
     width: 5rem;
     border-radius: 50%;
-    border: none;
-    border: 1px solid black;
+    /* border: none; */
+    border: 1px solid rgb(87, 87, 87);
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
     right: 2rem;
     bottom: 2rem;
-    transition: all 0.5s ease-in-out;
+    z-index: 1;
+    transition: transform border 0.5s ease-in-out;
 }
 
-.add-new-book span {
-    transition: all 0.3s ease-out;
+.plus {
+    transition: transform 0.5s ease-in-out;
     font-size: 5rem;
+    color: rgb(0, 0, 0);
 }
 
-.add-new-book span:hover {
-    transform: rotate(180deg);
+.add-new-book:hover {
+    transform: scale(1.08);
+    border: 3px solid rgb(3, 3, 3);
 }
 
-.add-new-book:hover{
-    transform: scale(1.04);
+.add-new-book:hover .plus {
+    transform: rotate(270deg);
 }
 
-.book-read{
-    background-color: rgb(139, 218, 139);
-}
-
-.book-not-read {
-    background-color: rgb(253, 132, 121);
-}
 .book-read,
 .book-not-read {
     height: 2rem;
     border-radius: 10px;
-    /* vertical-align: middle; */
     padding: 0.5rem;
+    margin: 0;
+    padding: 0;
 }
 
 .book-read:hover,
@@ -167,13 +213,39 @@ form {
     cursor: pointer;
 }
 
-.shadow {
-    display: fixed;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    background: rgb(0, 0, 0);
-    opacity: 0.3;
-    z-index: -1;
-    top: 0px;
+.book-card-read {
+    background: rgb(182, 233, 182);
 }
+
+.book-card-not-read {
+    background: rgb(248, 89, 89);
+}
+
+.book-card-not-read {
+    color: white;
+}
+
+.book-remove{
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 2px solid white;
+    padding: 5px;
+    transition: background 0.5s ease-in-out;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.8rem;
+}
+
+.book-card-read .book-remove {
+    background: rgb(248, 89, 89);
+    color: white;
+}
+
+.book-card-not-read .book-remove {
+    background: rgb(182, 233, 182);
+}
+
+.book-remove:hover {
+    cursor: pointer;
+    background-color: #bdbdbd;
+}
+
