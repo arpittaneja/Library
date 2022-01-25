@@ -1,5 +1,5 @@
 # Library
-A personal library to aad maintain your books!
+A personal library to and maintain your books!
 
 Details for the project can be found [here](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library).
 
