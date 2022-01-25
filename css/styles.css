@@ -194,8 +194,8 @@ input#pages {
 }
 
 .plus {
+    height: 3rem;
     transition: transform 0.5s ease-in-out;
-    font-size: 5rem;
 }
 
 .add-new-book:hover {
