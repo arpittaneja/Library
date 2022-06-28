@@ -245,3 +245,8 @@ input#pages {
     cursor: pointer;
     filter: brightness(90%);
 }
+
+#read, #not-read{
+    accent-color: rgb(175, 220, 175);
+}
+
