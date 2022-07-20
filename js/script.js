@@ -15,7 +15,7 @@ function Book(name, author, pages, hasRead) {
     this.hasRead = hasRead;
 }
 
-//dsiplays form on screen
+//displays form on screen
 function displayBookForm(e) {
     formContainer.classList.toggle("invisible");
     shadow.classList.toggle("invisible");
