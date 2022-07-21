@@ -154,12 +154,12 @@ input#pages {
     align-items: center;
     border-radius: 20px;
     flex: 0 0 auto;
-    transition: background 0.45s ease-in-out, border 0.15s ease-out;
+    transition: all 0.25s ease-in-out, border 0.15s ease-out;
     font-family: 'Libre Baskerville', serif;
 }
 
 .card:hover{
-    border: 2px solid black;
+    transform: scale(1.012);
 }
 
 .card p {
