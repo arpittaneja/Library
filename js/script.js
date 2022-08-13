@@ -69,7 +69,8 @@ function removeBook(e) {
 }
 
 //changes the read status of books
-Book.prototype.updateReadState = function (e) {
+Book.prototype.updateReadState = function(e) {
+    console.log(this);
     this.hasRead = !this.hasRead;
     if (this.hasRead === true) {
         e.target.textContent = "Book Not Read"
