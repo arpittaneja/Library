@@ -7,12 +7,14 @@ form.addEventListener("submit", addBookToLibrary);
 let shadow = document.querySelector(".shadow");
 let myLibrary = [];
 
-//book constructor
-function Book(name, author, pages, hasRead) {
-    this.name = name;
-    this.author = author;
-    this.pages = pages;
-    this.hasRead = hasRead;
+//book class
+class Book {
+    constructor(name, author, pages, hasRead) {
+        this.name = name;
+        this.author = author;
+        this.pages = pages;
+        this.hasRead = hasRead;
+    }
 }
 
 //displays form on screen
@@ -81,9 +83,8 @@ Book.prototype.updateReadState = function (e) {
     }
 }
 
-//appends html elemenst the the new Book card
+//appends html element the the new Book card
 function updateNewBookCard(newBookCard, book, index) {
-
     let p = document.createElement("p");
     p.textContent = `${book.name}`
     p.style.fontSize = "2.1rem";
